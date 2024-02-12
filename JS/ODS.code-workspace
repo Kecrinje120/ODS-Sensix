@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../LLMA_Tasks/Carrusel_YouTube"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ODS"
+	}
+}
