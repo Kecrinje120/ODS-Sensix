@@ -12,74 +12,42 @@
             <h2>¡Bienvenido al Cuestionario de Consumo Responsable y Equidad de Género!</h2><br>
             <p>En esta experiencia interactiva, te invitamos a reflexionar sobre tus hábitos alimenticios y tu percepción de la igualdad de género. Creemos en el poder de las decisiones individuales para impulsar un cambio positivo, y tu participación en este cuestionario es un paso valioso hacia un mundo más sostenible y equitativo.</p> -->
         <!-- </div> -->
+        <!-- ¿Tu empresa apoya activamente a empresas lideradas por mujeres? 
+        Sí, nuestra empresa tiene políticas y programas específicos para apoyar a empresas lideradas por mujeres, promoviendo la igualdad de género.
+        No, nuestra empresa no tiene políticas o programas específicos para apoyar a empresas lideradas por mujeres en este momento.
+        No estoy seguro/a de la política de la empresa en este tema.-->
 
         <div id="grande">
             <div id="pregunta1_DIV" class="pregunta_DIV">
                 <div class="pregunta_texto">
-                    <p><b id="pregunta_HTML">¿Tu empresa apoya activamente a empresas lideradas por mujeres?</b></p>
-                    <!-- Aquí va el texto de la pregunta -->
+                    <p><b id="pregunta_HTML"><!-- Aquí va el texto de la pregunta --></b></p>
                 </div>
-                <form action="#" class="pregunta_form"> <!-- input -> value = "valor que devuelve al servidor" -->
+                <form action="" class="pregunta_form"> <!-- input -> value = "valor que devuelve al servidor" -->
                     <label for="respuesta_opcion1" class="form_label">
-                        <input type="radio" id="respuesta_opcion1" name="respuesta" value="5" class="respuesta_radio">
-                        Sí, nuestra empresa tiene políticas y programas específicos para apoyar a empresas lideradas por mujeres, promoviendo la igualdad de género.
+                        <input type="radio" id="respuesta_opcion1" name="respuesta" value=" " class="respuesta_radio">
+                        <span id="respuesta1"><!-- contenido respuesta 1 --></span>
                     </label>
                     <label for="respuesta_opcion2" class="form_label">
                         <input type="radio" id="respuesta_opcion2" name="respuesta" value="RESPUESTA" class="respuesta_radio">
-                        Estamos en proceso de explorar formas de apoyar a empresas lideradas por mujeres, pero aún no hemos implementado programas concretos al respecto.
+                        <span id="respuesta2"><!-- contenido respuesta 2 --></span>
                     </label>
                     <label for="respuesta_opcion3" class="form_label">
                         <input type="radio" id="respuesta_opcion3" name="respuesta" value="RESPUESTA" class="respuesta_radio">
-                        No, nuestra empresa no tiene políticas o programas específicos para apoyar a empresas lideradas por mujeres en este momento.
+                        <span id="respuesta3"><!-- contenido respuesta 3 --></span>
                     </label>
                     <label for="respuesta_opcion4" class="form_label" id="opcional"> <!-- A veces no hay, y hay que ponerla en opcional {display -->
                         <input type="radio" id="respuesta_opcion4" name="respuesta" value="RESPUESTA" class="respuesta_radio">
-                        No estoy seguro/a de la política de la empresa en este tema.
+                        <span id="respuesta4"><!-- contenido respuesta 4 --></span>
                     </label>
                 </form>
             </div>
-    
-    
-            <!-- <div id="pregunta2_DIV" class="pregunta_DIV">
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-            </div>
-
-            <div class="pregunta_DIV">
-
-            </div> -->
         </div>
         
 
         <div id="barraDeControl">
             <!-- Aqui iran Atras ... Pregunta 1, 2, 3, ... Siguiente -->
-            <a href="#" class="Next_Back_Buttons">Anterior</a>
-            <a href="#" class="Next_Back_Buttons">Siguiente</a>
+            <a href="#" class="Next_Back_Buttons" id="backButton">Anterior</a>
+            <a href="#" class="Next_Back_Buttons" id="nextButton">Siguiente</a>
         </div>
         
         <footer id="QFooter">
