@@ -35,9 +35,9 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
 
         //Aquí tenemos una tabla de los valores que se van a recolectar por cada pregunta
         console.log(`Aquí tenemos una tabla de los valores que se van a recolectar por cada pregunta`);
-        var questionValues = {};
+        var questionValues = [];
         for (var n = 0; n < questions.length; n++) {
-            questionValues[`q${n}`] = 0
+            questionValues[n] = null;
         }
             console.log(questionValues);
 
@@ -51,21 +51,102 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
         var r4Value = questions[0].respuesta[3].valor;
 
         console.log(`respuesta1 = ${r1Value}`);
-        console.log(`respuesta1 = ${r2Value}`);
-        console.log(`respuesta1 = ${r3Value}`);
-        console.log(`respuesta1 = ${r4Value}`);
-        
+        console.log(`respuesta2 = ${r2Value}`);
+        console.log(`respuesta3 = ${r3Value}`);
+        console.log(`respuesta4 = ${r4Value}`);
+
+        // ASIGNAMOS rValues a los inputs correspondientes en el HTML
+
+        var respuesta_opcion1_input = document.getElementById(`respuesta_opcion1`);
+        var respuesta_opcion2_input = document.getElementById(`respuesta_opcion2`);
+        var respuesta_opcion3_input = document.getElementById(`respuesta_opcion3`);
+        var respuesta_opcion4_input = document.getElementById(`respuesta_opcion4`);
+
+        // Al optimizar en bucle utilizar class = "respuesta_radio"
+        // Asignación de rValue a inputValue
+
+        respuesta_opcion1_input.value = r1Value;
+        respuesta_opcion2_input.value = r2Value;
+        respuesta_opcion3_input.value = r3Value;
+        respuesta_opcion4_input.value = r4Value;
+
+        // Testeamos...
+        // Para sacar un conjunto de radios para ver el check los llamamos por su nombre (name), es mejor para
+        // formularios que el class
+
+        var radios = document.querySelectorAll(`.respuesta_radio`); //Array de radios
+
+        // Usamos el eventListener de nextButton para dar el valor del radio marcado...así que lo hacemos en 
+        // la función nextQuestion()
+
+        // Hacemos array de values para recorrerlos en memoria-check
+        var rValues = [r1Value, r2Value, r3Value, r4Value];
 
         function nextQuestion() {
+
+            /* // REQUIRED
+            var allChecked = false;
+            for (r = 0; r < radios.length; r++) {
+                if(radios[r].checked) { // si hay  alguna radio que esté checked
+                    allChecked = true;
+                    break
+                }
+            if (!allChecked) {
+                alert(`Debes marcar una respuesta`);
+                break
+            } */
+
+            // GUARDAR VALUES
+            for (var r = 0; r < radios.length; r++) {
+                if (radios[r].checked) { //indice [r] se mantiene en la coincidencia
+                    console.log(`Valor de la respuesta seleccionada: ${radios[r].value}`);
+
+                    // Aquí es donde se transfiere el radios[r].value a la array questionsValues
+                    
+                    questionValues[i] = parseInt(radios[r].value);
+
+                    // Ahora hay que desmarcar el radio pulsado
+                    radios[r].checked = false; // se desmarcan todos los del nuevo escenario
+
+                    break;
+                }
+            }
+
+            // Como estan desmarcados los del escenario puede funcionar este if si marcas o como si no marcas
+            // ningun radio ya que si marcas --> false y si no --> false
+            if (!radios.checked) {
+                console.log(questionValues);
+            }
+
+            /* IR A PAGINA DE RESULTS */
+            /* if (i == questions.length - 1) {
+                for (var n = 0; n < questionValues.length; n++) {
+                    if (questionValues[n] === null) {
+                        questionValues[n] = 0;
+                    }
+                }
+                localStorage.setItem(`questionValues`, JSON.stringify(questionValues));
+                window.location.replace(`../HTML/results.html`);
+            } */
+
+
+            // Aquí ira el finalizar test...Y CAMBIA `SIGUENTE` POR `FINALIZAR`
+            if (i == questions.length - 2) {
+                nextButton.textContent = `Finalizar`;
+            }
+
+
+            // IR A LA SIGUIENTE PREGUNTA Y RESPUESTAS
             if (i < questions.length - 1) { // 29 ESTA INCLUIDO YA QUE NOS DARA EL ELSE SABES 
-                
+    
                 i++;
 
                 console.log(`¡Siguente pregunta! Pregunta nº${i+1}`)
     
                 respuesta4.style.display = `inline`; // Por si estaba en `none` inline es más seguro
                 opcionalLabel.style.display = `inline`;
-    
+                
+
                 pregunta.textContent = `${questions[i].pregunta}`
     
                 if (questions[i].respuesta.length == 4) {
@@ -80,7 +161,24 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
                     var r2Value = questions[i].respuesta[1].valor;
                     var r3Value = questions[i].respuesta[2].valor;
                     var r4Value = questions[i].respuesta[3].valor;
-    
+
+                    // Metemos rValues en inputValues
+                    respuesta_opcion1_input.value = r1Value;
+                    respuesta_opcion2_input.value = r2Value;
+                    respuesta_opcion3_input.value = r3Value;
+                    respuesta_opcion4_input.value = r4Value;
+
+                    // Memoria del checked-value
+                    // Hacemos array de rValues
+                    
+                    /* if (questionValues[i] ==! null) {
+                        for (var v = 0; v < rValues.length; v++) {
+                            if (rValues[v] == questionValues[i]) {
+                                radios[v].checked = true;
+                                break
+                            }
+                        }
+                    } */ 
     
                 } else {
                     respuesta1.textContent = `${questions[i].respuesta[0].texto_respuesta}`;
@@ -94,8 +192,13 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
                     var r1Value = questions[i].respuesta[0].valor;
                     var r2Value = questions[i].respuesta[1].valor;
                     var r3Value = questions[i].respuesta[2].valor;
-                    var r4Value = 0;
+                    var r4Value = null;
                     
+                    // Metemos rValues en inputValues
+                    respuesta_opcion1_input.value = r1Value;
+                    respuesta_opcion2_input.value = r2Value;
+                    respuesta_opcion3_input.value = r3Value;
+                    respuesta_opcion4_input.value = r4Value;
                 }
     
                 console.log(`respuesta1 = ${r1Value}`);
@@ -112,8 +215,15 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
 
         function backQuestion() {
             if(i > 0) { 
+
+                // En caso de ir atras CAMBIA `FINALIZAR` POR `SIGUENTE`
+                if (i == questions.length - 1) {
+                    nextButton.textContent = `Siguiente`;
+                }
                 
                 i--;
+
+                console.log(questionValues);
 
                 console.log(`¡Anterior pregunta! Pregunta nº${i+1}`);
 
@@ -135,6 +245,12 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
                 var r3Value = questions[i].respuesta[2].valor;
                 var r4Value = questions[i].respuesta[3].valor;
 
+                // Metemos rValues en inputValues
+                respuesta_opcion1_input.value = r1Value;
+                respuesta_opcion2_input.value = r2Value;
+                respuesta_opcion3_input.value = r3Value;
+                respuesta_opcion4_input.value = r4Value;
+
 
             } else {
                 respuesta1.textContent = `${questions[i].respuesta[0].texto_respuesta}`;
@@ -149,6 +265,12 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
                 var r2Value = questions[i].respuesta[1].valor;
                 var r3Value = questions[i].respuesta[2].valor;
                 var r4Value = 0;
+
+                // Metemos rValues en inputValues
+                respuesta_opcion1_input.value = r1Value;
+                respuesta_opcion2_input.value = r2Value;
+                respuesta_opcion3_input.value = r3Value;
+                respuesta_opcion4_input.value = r4Value;
                 
             }
 
@@ -186,7 +308,9 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
         //2. ACTIVAR EVENTOS
 
         
-        var nextButton = document.getElementById(`nextButton`).addEventListener(`click`, nextQuestion);/* , pointRecolect(r1Value, r2Value, r3Value, r4Value) */
+        var nextButton = document.getElementById(`nextButton`);
+        nextButton.addEventListener(`click`, nextQuestion)
+        /* , pointRecolect(r1Value, r2Value, r3Value, r4Value) */
         var backButton = document.getElementById(`backButton`).addEventListener(`click`, backQuestion);
 
 
@@ -275,3 +399,24 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
 */
 
 /* OTRA TAREA POR REALIZAR, QUITAR CHECKED CUANDO SE AVANCE Y GUARDAR EL CHECKED CUANDO SE ATRASE */
+
+//1. Mantener el checked según la pregunta marcada
+//2. Al dar siguiente desmarcar todos los inputs
+//3. Al dar anterior que aparezca el input marcado (opcional)
+//***** 3.1 COMO HACERLO?
+//***** CASO NULL-> Checked vacio
+//***** CASO numero 0 -> buscar 
+
+
+/* TAREA SIN COMPLETAR, ASIGNAR rValues al inputValue  */ /* HECHO */
+
+/* NULL A 0 */
+
+/* 
+        for (var n = 0; n < questionValues.length; n++) {
+            if (questionValues === null) {
+                questionValues[n] = 0;
+            }
+        }
+
+*/
