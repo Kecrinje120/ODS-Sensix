@@ -173,59 +173,21 @@ body {
 
 /* -----------------------------------------------FOOOOOOTER------------------------------------------------------ */
 
-#QFooter {
-    width: 100%;
-    /* background-color: #d91430; */
-    position: fixed;
-    z-index: 199;
-    bottom: 0;
+
+
+/* ---------------------------------------------- Pagina: RESULTS ------------------------------------------------- */
+
+#titulo_results {
     text-align: center;
 }
 
-#FLeft {
-    position: fixed;
-    left: 3vw;
-    bottom: 1vw;
-    display: inline-block;
-    margin: 1vw;
-    /* background-color: #d91430; */
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
+#h2_gracias {
+    text-align: center;
 }
 
-#FLeft a{
-    height: 50px;
-    border-radius: 10px;
-}
-
-#FLeft button {
-    border-radius: 10px;
-}
-
-
-
-#FRight {
-    display: inline-block;
-    margin: 1vw;
-    gap: 10px;
-    position: fixed;
-    right: 5vw;
-    bottom: 1vw;
-    /* background-color: #d91430; */
-}
-
-
-#FRight a {
-    font-size: 1.2em;
-    text-decoration: none;
-    background-color: white;
-    /* color: red; */
-    padding: 0px 8px;
-    border-radius: 8px;
-    border: 2px solid #d91430;
-}
-
-#FRight a:hover { /*HACER 2 DIVS .FRight y ya esta*/
-    font-size: 1.8em;
+#tips-box {
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    justify-content: center; /* Centra en X */
 }
