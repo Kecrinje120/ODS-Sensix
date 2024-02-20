@@ -1,0 +1,132 @@
+* {
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+body {
+    padding: 20px;
+    background-image: url(../IMG/Q-Background.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header {
+    padding: 10px;
+    margin-bottom: 50px;
+    background-color: #ffffff93;
+}
+h1 {
+    color: #e50000;
+    text-align: center; 
+    padding: 15px;
+    font-size: 32px;
+}
+h2 {
+    color: #e50000;
+    text-align: center; 
+    padding: 15px;
+}
+p {
+    margin-bottom: 10px; 
+    color:  #000; 
+    font-size: 16px; 
+}
+button {
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e50000; 
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 20px; 
+}
+button:hover {
+    background-color: #ff6666; 
+}
+.contenido, .formulario {
+    background-color: #ffffff93;
+    border-radius: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.texto {
+    flex: 1;
+    margin-right: 20px;
+}
+.imagencontenido {
+    width: 45%;
+    border-radius: 20px;
+}
+.imagenformulario{
+    width: 45%;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+    .contenido, .formulario  {
+        flex-direction: column-reverse;
+    }
+
+    .texto {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .imagencontenido, .imagenformulario {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+ul {
+    overflow: hidden;
+    margin: 20px 0;
+    padding: 0;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    list-style: none;
+    display: flex; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 0; 
+    left: 70px;
+}
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+}
+.hamburger.activado ul {
+    max-height: 100px;
+}
+.top, .mid, .bot {
+    width: 35px;
+    height: 5px;
+    background-color:#000;
+    margin: 6px 0;
+    transition: 0.5s;
+}
+.transicion .top {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.transicion .mid {
+    opacity: 0;
+}
+.transicion .bot {
+    transform: translate(0, -11px) rotate(45deg);
+}
+.transicion ul {
+    max-height: 100px;
+}
+.transicion ul li {
+    font-size: 20px;
+}
+.visible {
+    display: block;
+}
