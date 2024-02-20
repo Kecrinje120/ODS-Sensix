@@ -12,9 +12,10 @@ body {
     background-attachment: fixed;
 }
 header {
-    padding: 10px;
+    padding: 25px;
     margin-bottom: 50px;
     background-color: #ffffff93;
+    border-radius: 20px;
 }
 h1 {
     color: #e50000;
@@ -51,7 +52,6 @@ button:hover {
     background-color: #ffffff93;
     border-radius: 20px;
     padding: 20px;
-    border-radius: 5px;
     margin-bottom: 20px; 
     display: flex;
     justify-content: flex-start;
