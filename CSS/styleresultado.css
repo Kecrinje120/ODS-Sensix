@@ -1,0 +1,64 @@
+* {
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+body {
+    padding: 20px;
+    background-image: url(../IMG/Q-Background.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1 {
+    color: #e50000;
+    text-align: center; 
+    padding: 15px;
+    font-size: 32px;
+}
+ul {
+    overflow: hidden;
+    margin: 20px 0;
+    padding: 0;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    list-style: none;
+    display: flex; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 0; 
+    left: 70px;
+}
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+}
+.hamburger.activado ul {
+    max-height: 100px;
+}
+.top, .mid, .bot {
+    width: 35px;
+    height: 5px;
+    background-color:#000;
+    margin: 6px 0;
+    transition: 0.5s;
+}
+.transicion .top {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.transicion .mid {
+    opacity: 0;
+}
+.transicion .bot {
+    transform: translate(0, -11px) rotate(45deg);
+}
+.transicion ul {
+    max-height: 100px;
+}
+.transicion ul li {
+    font-size: 20px;
+}
+.visible {
+    display: block;
+}
