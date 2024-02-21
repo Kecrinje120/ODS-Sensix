@@ -37,7 +37,11 @@ document.addEventListener(`DOMContentLoaded`, function() {
                 sumatorio += questionValuesFinal[n];
             }
 
-            console.log(`Se ha completado el quest con un ${sumatorio}/120`);
+            console.log(`Se ha completado el quest con un ${sumatorio}/150`);
+
+            var resultadoFinal = parseFloat((sumatorio / 150)*10);
+
+            console.log(`Resultado: ${resultadoFinal}`);
 
         } else {
             console.log(`NO SE ENCONTRARON LOS DATOS EN EL ALMACENAMIENTO LOCAL`)
