@@ -5,9 +5,11 @@
     margin: 0;
     font-family: monospace;
 }
-
 body {
-    background-color: #d91430;
+    padding: 20px;
+    background-image: url(../IMG/Q-Background.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Menu hamburgesa */
@@ -45,7 +47,7 @@ body {
 .visible {
     display: block;
 }
-ul {
+#ulhamburgesa {
     overflow: hidden;
     margin: 20px 0;
     padding: 0;
@@ -58,11 +60,37 @@ ul {
     top: 0; 
     left: 60px;
 }
-a {
+#textohamburgesa {
     color: #000;
     text-decoration: none;
 }
 
+/* Div con fondo blanco */
+
+#fondoblanco {
+    padding: 25px;
+    margin-bottom: 50px;
+    background-color: #ffffff93;
+    border-radius: 20px;
+}
+/* Titulos y parrafos */
+
+#titulo-principal {
+    color: #e50000;
+    text-align: center; 
+    padding: 15px;
+    font-size: 32px;
+}
+#h2-ODS {
+    color: #e50000;
+    text-align: center; 
+    padding: 15px;
+}
+p {
+    margin-bottom: 10px; 
+    color:  #000; 
+    font-size: 16px; 
+}
 
 #Q-Body {
     background-image: url(../IMG/Q-Background.jpeg);
