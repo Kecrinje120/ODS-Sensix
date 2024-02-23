@@ -171,23 +171,6 @@ body {
 }
 
 
-/* -----------------------------------------------FOOOOOOTER------------------------------------------------------ */
 
 
 
-/* ---------------------------------------------- Pagina: RESULTS ------------------------------------------------- */
-
-#titulo_results {
-    text-align: center;
-}
-
-#h2_gracias {
-    text-align: center;
-}
-
-#tips-box {
-    display: flex;
-    justify-self: center;
-    text-align: center;
-    justify-content: center; /* Centra en X */
-}
