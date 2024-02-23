@@ -20,7 +20,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     if (window.location.pathname.endsWith('quest.html')) {
         // La página actual es quest.html, ejecutar fetch
         fetchQuestions();
-    } else {
+    } else if (window.location.pathname.endsWith('results.html')){
         console.log(`NUEVA PAGINA`);
 
         var questionValuesString = localStorage.getItem(`questionValues`);
@@ -46,6 +46,18 @@ document.addEventListener(`DOMContentLoaded`, function() {
         } else {
             console.log(`NO SE ENCONTRARON LOS DATOS EN EL ALMACENAMIENTO LOCAL`)
         }
+    } else {
+        function hamburger() {
+            var equis = document.querySelector('.hamburger');
+            var nav = document.querySelector('nav');
+            equis.classList.toggle("transicion");
+            nav.classList.toggle("transicion");
+        
+            var li = document.querySelector('ul li');
+            li.classList.toggle("visible");
+        }
+
+        
     }
 });
 
