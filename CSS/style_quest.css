@@ -25,13 +25,13 @@
 nav{
     position: absolute;
 }
-.hamburger {
+.hamburguer {
     margin: 10px;
     display: inline-block;
     cursor: pointer;
 }
 
-.hamburger.activado ul {
+.hamburguer.activado ul {
     max-height: 100px;
 }
 
@@ -63,30 +63,42 @@ nav{
     font-size: 20px;
 }
 
-.visible {
+#visible {
     display: block;
 }
 
-#contenido-hamburgesa {
+#contenido-hamburguesa {
     overflow: hidden;
     margin: 20px 0;
     padding: 0;
-    max-height: 0;
+    max-height: 1000px; /* Cambiado a una altura suficientemente grande */
     transition: max-height 0.5s ease;
     list-style: none;
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 0;
     left: 60px;
 }
 
-#contenido-hamburgesa li a {
+#contenido-hamburguesa ul {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+#contenido-hamburguesa.visible ul {
+    display: contents;
+}
+
+#contenido-hamburguesa li a {
     color: #000;
     text-decoration: none;
 }
 
-/* --------------------------------------------- Titulos y texto  --------------------------------------------- */
+/* --------------------------------------------- Titulos y texto --------------------------------------------- */
 
 #tituloh1 {
     color: #e50000;
@@ -107,7 +119,10 @@ p {
     color: #000;
     font-size: 16px;
 }
-
+#texto {
+    flex: 1;
+    margin-right: 20px;
+}
 /* --------------------------------------------- Botonoes --------------------------------------------- */
 #boton-default {
     display: block;
@@ -142,7 +157,6 @@ p {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    text-align: center;
 }
 
 /* ---------------------------------------------Imagenes de los divs contenido y formulario ---------------------------------------------*/
@@ -153,6 +167,7 @@ p {
 }
 
 .imagenformulario {
+    left: 0px;
     width: 45%;
     border-radius: 20px;
     margin-right: 20px;
