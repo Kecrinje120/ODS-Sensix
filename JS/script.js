@@ -8,16 +8,73 @@
 * 3.  .then usamos .then para manejar la respuesta (response: es la respuesta recibida del servidor) 
 */
 
+var questionValues;
+
+var questionsValuesString = localStorage.getItem(questionValues);
+        
+questionValues = JSON.parse(questionsValuesString);
 
 var i = 0;
 
-document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
+document.addEventListener(`DOMContentLoaded`, function() {
+    if (window.location.pathname.endsWith('quest.html')) {
+        // La página actual es quest.html, ejecutar fetch
+        fetchQuestions();
+    } else if (window.location.pathname.endsWith(`results.html`)){
+        console.log(`NUEVA PAGINA`);
+
+        var questionValuesString = localStorage.getItem(`questionValues`);
+
+        if (questionValuesString) {
+            console.log(`¡¡¡TENGO LOS VALORES STRING!!!`)
+            var questionValuesFinal = JSON.parse(questionValuesString);
+            console.log(questionValuesFinal);
+
+            // AQUÍ ES DONDE ESCRIBIMOS EL CODIGO DE RESULTS
+            var sumatorio = 0;
+
+            for (var n = 0; n < questionValuesFinal.length; n++) {
+                sumatorio += questionValuesFinal[n];
+            }
+
+            console.log(`Se ha completado el quest con un ${sumatorio}/150`);
+
+            var resultadoFinal = parseFloat((sumatorio / 150)*10);
+
+            console.log(`Resultado: ${resultadoFinal}`);
+
+        } else {
+            console.log(`NO SE ENCONTRARON LOS DATOS EN EL ALMACENAMIENTO LOCAL`)
+        }
+    } else {
+        console.log(`Pagina index`)
+
+        function hamburgerFunction() {
+            var equis = document.querySelector('.hamburger');
+            var nav = document.querySelector('nav');
+            equis.classList.toggle("transicion");
+            nav.classList.toggle("transicion");
+        
+            var li = document.querySelector('ul li');
+            li.classList.toggle("visible");
+        }
+
+        var hamburger = document.getElementById(`hamburger`);
+        hamburger.addEventListener(`click`, hamburgerFunction)
+
+       
+
+    }
+});
+
+/* document.addEventListener( `DOMContentLoaded`,  */
+function fetchQuestions() {
+    console.log(`fetchQuestions se esta ejecutando...`)
     fetch (`../JSON/json.json`)
-    .then(response => response.json()) //response (respuesta servidor) + .json() (convertidor en objeto de json) <= response (lo metemos en este response) 
+    .then(response => response.json())
+    //response (respuesta servidor) + .json() (convertidor en objeto de json) <= response (lo metemos en este response) 
     .then(data => { // ahora vamos a manejar los datos de la response
         var questions = data // guardamos los datos en un objeto llamado questions
-
-        
 
         console.log(questions);
 
@@ -35,9 +92,9 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
 
         //Aquí tenemos una tabla de los valores que se van a recolectar por cada pregunta
         console.log(`Aquí tenemos una tabla de los valores que se van a recolectar por cada pregunta`);
-        var questionValues = [];
+        questionValues = [];
         for (var n = 0; n < questions.length; n++) {
-            questionValues[n] = null;
+            questionValues[n] = 0;
         }
             console.log(questionValues);
 
@@ -108,6 +165,10 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
                     // Ahora hay que desmarcar el radio pulsado
                     radios[r].checked = false; // se desmarcan todos los del nuevo escenario
 
+                    // Despues de guardar el ultimo valor guardamos questionValues[i] en local storage
+                    /* if (i == questions.length) {
+                        localStorage.setItem(`questionValues`, JSON.stringify(questionValues)); // EL MALO
+                    } */
                     break;
                 }
             }
@@ -119,15 +180,15 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
             }
 
             /* IR A PAGINA DE RESULTS */
-            /* if (i == questions.length - 1) {
-                for (var n = 0; n < questionValues.length; n++) {
+            if (i == questions.length - 1) {
+                /* for (var n = 0; n < questionValues.length; n++) {
                     if (questionValues[n] === null) {
                         questionValues[n] = 0;
                     }
-                }
-                localStorage.setItem(`questionValues`, JSON.stringify(questionValues));
+                } */
+                localStorage.setItem(`questionValues`, JSON.stringify(questionValues)); // ESTE ES EL BUENO
                 window.location.replace(`../HTML/results.html`);
-            } */
+            }
 
 
             // Aquí ira el finalizar test...Y CAMBIA `SIGUENTE` POR `FINALIZAR`
@@ -320,7 +381,7 @@ document.addEventListener( "DOMContentLoaded", function fetchQuestions() {
         /* showQuestion(i) */; //Creamos función showQuestion() par mostrar preguntas y currentQuestioIndex lleva el registro actual de la pregunta que se esta mostrando
     })
     .catch(error => console.error(`Error fetching questions: ${error}`)) // Lo mismo que el anterior, si hay algun error(error) lo mostramos en consola y luego lo almacenamos en objeto error
-});
+}/* ) */;
  
 
 /* var backButton = document.getElementById(`backButton`).addEventListener(`click`, backQuestion, pointRecolect) */ /* Teoria de poner otra funcion que recoleta el valor */
