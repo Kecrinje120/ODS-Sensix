@@ -1,6 +1,4 @@
 
-
-
 /*
 * Partes de la llamada de datos de un archivo JSON externo
 * 1. function fetchQuestions() { Hacemos la función que nos llama a los datos }
@@ -15,8 +13,7 @@ var questionsValuesString = localStorage.getItem(questionValues);
 questionValues = JSON.parse(questionsValuesString);
 
 var i = 0;
-
-document.addEventListener(`DOMContentLoaded`, function () {
+document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.endsWith('quest.html')) {
         // La página actual es quest.html, ejecutar fetch
         fetchQuestions();
@@ -49,26 +46,26 @@ document.addEventListener(`DOMContentLoaded`, function () {
     } else {
         console.log(`Pagina index`);
 
-        function hamburgerFunction() {
+        function MenuHamburgesa() {
             var equis = document.querySelector('.hamburguer');
             var nav = document.querySelector('nav');
+            var contenidoHamburguesa = document.getElementById('contenido-hamburguesa');
+            var liElements = document.querySelectorAll('#contenido-hamburguesa li');
+        
             equis.classList.toggle("transicion");
             nav.classList.toggle("transicion");
-        
-            var contenidoHamburguesa = document.getElementById('contenido-hamburguesa');
             contenidoHamburguesa.classList.toggle("visible");
         
-            // Aplicar una transición de opacidad a los elementos <ul>
-            var ulElements = document.querySelectorAll('#contenido-hamburguesa ul');
-            ulElements.forEach(function(ul) {
-                ul.classList.toggle("visible");
+            // Toggle visibility for each li element
+            liElements.forEach(function(li) {
+                li.classList.toggle("visible");
             });
         }
         
-        var hamburger = document.getElementById('hamburguer');
-        hamburger.addEventListener('click', hamburgerFunction);
-        
-    }
+        // Asigna el evento de clic al ícono de hamburguesa
+        var hamburger = document.getElementById('MenuHamburgesa');
+        hamburger.addEventListener('click', MenuHamburgesa);
+    }      
 });
 
 /* document.addEventListener( `DOMContentLoaded`,  */
