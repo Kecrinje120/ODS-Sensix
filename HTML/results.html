@@ -2,45 +2,40 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../CSS/styleresults.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recomendaciones</title>
+    <title>Test finalizado</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/style_quest.css">
 </head>
 
-<body>
-
-    <div id="header">
+<body id="Q-Body">
+    <header id="Q-Header">
         <nav>
             <div class="hamburger" onclick="hamburger()">
                 <div class="top"></div>
                 <div class="mid"></div>
                 <div class="bot"></div>
             </div>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="quest.html">Formulario</a></li>
-            <!--<li><a href="results.html">Resultado</a></li> -->
+            <ul id="contenido-hamburgesa">
+                <li>Inicio</li>
+                <li>Formulario</li>
             </ul>
         </nav>
-
-        <h1 id="titulo_results">¡Has terminado el test!</h1>
-    
-        <h2 id="h2_gracias">Gracias por participar</h2>
-    
-        <div id="tips-box">
-            <button id="tips-button">Ver consejos</button>
-        </div>
         
-    </div>
-    
-    <div>
-        <!-- NOTA: 3.12
-        Puntos totales: 23/150 -->
+        <h1 id="tituloh1">¡Has terminado el test!</h1>
+
+        <div>
+            <!-- NOTA: 3.12
+            Puntos totales: 23/150 -->
+        </div>
+        <div>
+            <h2 id="tituloh2">Gracias por participar</h2>
+        </div>
+    </header>
+    <div id="tips-box">
+        <a href="#">Ver consejos</a>
     </div>
 
-    <script src="../JS/hamburger.js"></script>
-    <script src="../JS/script.js">document.addEventListener(`DOMContentLoaded`,)</script>
+    <script src="../JS/script.js"></script>
 </body>
-
 </html>

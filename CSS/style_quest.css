@@ -1,0 +1,309 @@
+* {
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+#Q-Body {
+    background-image: url(../IMG/Q-Background.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* --------------------------------------------- HEADER ---------------------------------------------*/
+#Q-Header {
+    margin: 20px;
+    padding: 15px;
+    margin-bottom: 50px;
+    background-color: #ffffff93;
+    border-radius: 20px;
+}
+
+/* --------------------------------------------- MENU HAMBURGESA --------------------------------------------- */
+
+.hamburguer {
+    display: inline-block;
+    cursor: pointer;
+}
+#contenido-hamburguesa {
+    display: none;
+/*     margin: 20px 0;
+    padding: 0;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 70px; */
+}
+#contenido-hamburguesa ul li {
+    text-decoration: none;
+    display: block; /* Mostrar los elementos de la lista */
+}
+#contenido-hamburguesa ul li a {
+    text-decoration: none;
+    color: black; /* Cambiar el color del texto si es necesario */
+}
+/* .visible {
+    display: block;
+} */
+.top, .mid, .bot {
+    width: 35px;
+    height: 5px;
+    background-color:#000;
+    margin: 6px 0;
+    transition: 0.5s;
+}
+.transicion .top {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.transicion .mid {
+    opacity: 0;
+}
+.transicion .bot {
+    transform: translate(0, -11px) rotate(45deg);
+}
+.transicion ul {
+    max-height: 100px;
+}
+.transicion ul li {
+    font-size: 20px;
+}
+
+
+/* --------------------------------------------- Titulos y texto --------------------------------------------- */
+
+#tituloh1 {
+    color: #e50000;
+    text-align: center;
+    padding: 15px;
+    font-size: 32px;
+}
+
+#tituloh2 {
+    color: #e50000;
+    text-align: center;
+    padding: 15px;
+    font-size: 28px;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 16px;
+}
+#texto {
+    flex: 1;
+    margin-right: 20px;
+}
+/* --------------------------------------------- Botonoes --------------------------------------------- */
+#boton-default {
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e50000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 20px;
+}
+
+#boton-default:hover {
+    background-color: #ff6666;
+}
+
+#comencemos_link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --------------------------------------------- Div con fondo blanco --------------------------------------------- */
+.contenido,
+.formulario {
+    margin: 20px;
+    background-color: #ffffff93;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* ---------------------------------------------Imagenes de los divs contenido y formulario ---------------------------------------------*/
+
+.imagencontenido {
+    width: 45%;
+    border-radius: 20px;
+}
+
+.imagenformulario {
+    left: 0px;
+    width: 45%;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .contenido,
+    .formulario {
+        flex-direction: column;
+    }
+
+    .texto {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .imagencontenido,
+    .imagenformulario {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+#fondoblanco {
+    padding: 25px;
+    margin-bottom: 50px;
+    background-color: #ffffff93;
+    border-radius: 20px;
+}
+
+/* -------------------------------------------- P-AGINA HTMl QUEST ---------------------------------------------*/
+/* --------------------------------------------- FORMATO PREGUNTA --------------------------------------------- */
+
+#grande {
+    width: 100%;
+    height: 2400px;
+    display: flex;
+}
+
+.pregunta_DIV {
+    border: 2px solid black;
+    height: 600px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid red;
+    border-radius: 14px;
+    margin: 2vw 2vw 10vw 2vw;
+
+    background-color: rgb(255, 255, 255, 0.3);
+}
+
+.pregunta_texto {
+    margin-bottom: 20px;
+    /* Ajusta el espacio entre el texto y el formulario */
+    text-align: center;
+    margin: 0 4vw 20px 4vw;
+}
+
+.pregunta_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form_label {
+    margin: 10px 4vw 10px 4vw;
+}
+
+.respuesta_radio {
+    color: black;
+}
+
+
+/* -----------------------------------------EFECTO FADE---------------------------------------------------------- */
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+    opacity: 1;
+}
+
+.fadeOut {
+    animation: fadeOut 1s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* -------------------------------------- Barra de Control ------------------------------------------------------- */
+
+#barraDeControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 520px;
+    text-align: center;
+    width: 100%;
+    padding: 4px 1vw;
+    /* border: 2px solid black;
+    border-radius: 12px;
+    background-color: rgb(217, 20, 48, 0.6); */
+}
+
+@media only screen and (max-width: 600px) {
+    #barraDeControl {
+        top: 620px;
+    }
+
+    .pregunta_DIV {
+        height: 700px;
+    }
+}
+
+#barra_central {
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: rgb(217, 20, 48, 0.9);
+}
+
+.Next_Back_Buttons {
+    text-decoration: none;
+    color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 4px 1vw;
+    background-color: rgb(217, 20, 48, 0.9);
+    margin: 2vw;
+}
+
+.lt_gt {
+    text-decoration: none;
+    color: white;
+}
+
+.numbers_points {
+    text-decoration: none;
+    color: white;
+}
+
+.points {
+    display: inline;
+    color: white;
+}
+
+#point_back {
+    display: none;
+}
+
+#point_next {
+    display: inline-block;
+}

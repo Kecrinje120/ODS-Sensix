@@ -2,43 +2,51 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="CSS/stylesindex.css">
+    <link rel="stylesheet" href="CSS/style_quest.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ODS</title>
 </head>
 
-<body>
-    <header>
+<body id="Q-Body">
+    <header id="Q-Header">
         <nav>
-            <div class="hamburger" onclick="hamburger()">
+            <div class="hamburguer" id="MenuHamburgesa">
                 <div class="top"></div>
                 <div class="mid"></div>
                 <div class="bot"></div>
             </div>
+            <div id="contenido-hamburguesa">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="HTML/quest.html">Formulario</a></li>
-            <!--<li><a href="HTML/results.html">Resultado</a></li> -->
+                <li><a href="HTML/results.html">Resultados/Consejos</a></li>
             </ul>
+        </div>
         </nav>
-        <h1 id="titulo-principal">ODS - Objetivos de Desarrollo Sostenible</h1>
-        <button url="">Comencemos</button>
+        
+        <h1 id="tituloh1">ODS - Objetivos de Desarrollo Sostenible</h1>
+        <button id="boton-default"><a id="comencemos_link" href="HTML/quest.html">Comencemos</a></button>
     </header>
     <div class="contenido">
-        <div class="texto">
-            <h2 id="h2-ODS">¿Que es ODS?</h2>
-            <p>Son un conjunto  17 objetivos, fueron diseñados para ser alcanzados para el año 2030 y abordan tanto
-                 los problemas sociales como los ambientales, reconociendo que estos desafíos están interconectados y requieren 
-                 soluciones integrales y colaborativas a nivel mundial. Los ODS proporcionan un marco para guiar a los gobiernos, 
-                 las organizaciones internacionales, el sector privado y la sociedad civil en sus esfuerzos para promover un 
-                 desarrollo sostenible en todo el mundo.
+        <div id="texto">
+            <h2 id="tituloh2">¿Que es ODS?</h2>
+            <p>Son un conjunto 17 objetivos, fueron diseñados para ser alcanzados para el año 2030 y abordan tanto
+                los problemas sociales como los ambientales, reconociendo que estos desafíos están interconectados y
+                requieren
+                soluciones integrales y colaborativas a nivel mundial. Los ODS proporcionan un marco para guiar a los
+                gobiernos,
+                las organizaciones internacionales, el sector privado y la sociedad civil en sus esfuerzos para promover
+                un
+                desarrollo sostenible en todo el mundo.
             </p>
-            <h2 id="h2-ODS">Importancia de la igualdad de género en el mundo laboral</h2>
-            <p>La igualdad de género en el ámbito laboral es esencial para lograr un desarrollo sostenible y equitativo. 
-                La discriminación de género limita el acceso de las mujeres a oportunidades laborales y salarios justos, 
-                lo que impacta negativamente en el desarrollo económico y social. Promover la igualdad de género en el trabajo 
-                contribuye al logro de varios Objetivos de Desarrollo Sostenible, como el ODS 5 (Igualdad de género) y el ODS 8 
+            <h2 id="tituloh2">Importancia de la igualdad de género en el mundo laboral</h2>
+            <p>La igualdad de género en el ámbito laboral es esencial para lograr un desarrollo sostenible y equitativo.
+                La discriminación de género limita el acceso de las mujeres a oportunidades laborales y salarios justos,
+                lo que impacta negativamente en el desarrollo económico y social. Promover la igualdad de género en el
+                trabajo
+                contribuye al logro de varios Objetivos de Desarrollo Sostenible, como el ODS 5 (Igualdad de género) y
+                el ODS 8
                 (Trabajo decente y crecimiento económico).
             </p>
         </div>
@@ -47,14 +55,15 @@
     <div class="formulario">
         <img src="IMG/formularioimg.jpg" alt="formularioimg" class="imagenformulario">
         <div class="texto">
-        <h2 id="h2-ODS">Formulario para mejorar tu empresa</h2>
-        <p>Este formulario te ayudará a identificar áreas de mejora en tu empresa para promover la igualdad de género y
-            el desarrollo sostenible.</p>
-        <p>También te dará una serie de consejos personalizados dependiendo de tus respuestas.</p>
-        <button url="">Comencemos</button>
+            <h2 id="tituloh2">Formulario para mejorar tu empresa</h2>
+            <p>Este formulario te ayudará a identificar áreas de mejora en tu empresa para promover la igualdad de
+                género y
+                el desarrollo sostenible.</p>
+            <p>También te dará una serie de consejos personalizados dependiendo de tus respuestas.</p>
+            <button id="boton-default"><a id="comencemos_link" href="HTML/quest.html">Comencemos</a></button>
         </div>
     </div>
 
-    <script src="JS/hamburger.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 </html>
