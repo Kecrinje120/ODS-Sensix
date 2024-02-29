@@ -13,7 +13,8 @@ var questionsValuesString = localStorage.getItem(questionValues);
 questionValues = JSON.parse(questionsValuesString);
 
 var i = 0;
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.endsWith('quest.html')) {
         // La página actual es quest.html, ejecutar fetch
         fetchQuestions();

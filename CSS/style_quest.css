@@ -29,14 +29,10 @@
 }
 #contenido-hamburguesa {
     display: none;
-/*     margin: 20px 0;
-    padding: 0;
-    max-height: 0;
-    transition: max-height 0.5s ease;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 70px; */
+}
+#contenido-hamburguesa.activado {
+    display: block; /* Mostrar la lista cuando el menú hamburguesa está activado */
+    max-height: 100px;
 }
 #contenido-hamburguesa ul li {
     text-decoration: none;
@@ -44,11 +40,8 @@
 }
 #contenido-hamburguesa ul li a {
     text-decoration: none;
-    color: black; /* Cambiar el color del texto si es necesario */
+    color: black;
 }
-/* .visible {
-    display: block;
-} */
 .top, .mid, .bot {
     width: 35px;
     height: 5px;
@@ -72,6 +65,15 @@
     font-size: 20px;
 }
 
+
+/* --------------------------------------------- Titulos y texto --------------------------------------------- */
+
+#tituloh1 {
+    color: #e50000;
+    text-align: center;
+    padding: 15px;
+    font-size: 32px;
+}
 
 /* --------------------------------------------- Titulos y texto --------------------------------------------- */
 
