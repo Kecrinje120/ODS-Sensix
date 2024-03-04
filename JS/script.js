@@ -14,7 +14,8 @@ questionValues = JSON.parse(questionsValuesString);
 
 var i = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
     if (window.location.pathname.endsWith('quest.html')) {
         // La página actual es quest.html, ejecutar fetch
         fetchQuestions();
@@ -44,30 +45,29 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.log(`NO SE ENCONTRARON LOS DATOS EN EL ALMACENAMIENTO LOCAL`)
         }
-    } else {
-        console.log(`Pagina index`);
-
-        function MenuHamburgesa() {
-            var equis = document.querySelector('.hamburguer');
-            var nav = document.querySelector('nav');
-            var contenidoHamburguesa = document.getElementById('contenido-hamburguesa');
-
-            equis.classList.toggle("transicion");
-            nav.classList.toggle("transicion");
-
-            if (contenidoHamburguesa.style.display !== "block") {
-                contenidoHamburguesa.style.display = "block"
-            } else {
-                contenidoHamburguesa.style.display = "none"
-            }
-
-        }
-
-        // Asigna el evento de clic al ícono de hamburguesa
-        var hamburger = document.getElementById('MenuHamburgesa');
-        hamburger.addEventListener('click', MenuHamburgesa);
     }
 });
+
+function MenuHamburgesa() {
+    var equis = document.querySelector('.hamburguer');
+    var nav = document.querySelector('nav');
+    var contenidoHamburguesa = document.getElementById('contenido-hamburguesa');
+
+    equis.classList.toggle("transicion");
+    nav.classList.toggle("transicion");
+
+    if (contenidoHamburguesa.style.display !== "block") {
+        contenidoHamburguesa.style.display = "block"
+    } else {
+        contenidoHamburguesa.style.display = "none"
+    }
+
+}
+
+// Asigna el evento de clic al ícono de hamburguesa
+var hamburger = document.getElementById('MenuHamburgesa');
+hamburger.addEventListener('click', MenuHamburgesa);
+
 
 /* document.addEventListener( `DOMContentLoaded`,  */
 function fetchQuestions() {

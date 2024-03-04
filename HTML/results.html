@@ -2,35 +2,34 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="../CSS/style_quest.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test finalizado</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/style_quest.css">
 </head>
 
 <body id="Q-Body">
     <header id="Q-Header">
         <nav>
-            <div class="hamburger" onclick="hamburger()">
+            <div class="hamburguer" id="MenuHamburgesa">
                 <div class="top"></div>
                 <div class="mid"></div>
                 <div class="bot"></div>
             </div>
-            <ul id="contenido-hamburgesa">
-                <li>Inicio</li>
-                <li>Formulario</li>
-            </ul>
+            <div id="contenido-hamburguesa">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="quest.html">Formulario</a></li>
+                    <li><a href="results.html">Resultados/Consejos</a></li>
+                </ul>
+            </div>
         </nav>
-        
-        <h1 id="tituloh1">¡Has terminado el test!</h1>
 
-        <div>
-            <!-- NOTA: 3.12
+        <h1 id="tituloh1">¡Has terminado el test!</h1>
+        <!-- NOTA: 3.12
             Puntos totales: 23/150 -->
-        </div>
-        <div>
-            <h2 id="tituloh2">Gracias por participar</h2>
-        </div>
+        <h2 id="tituloh2">Gracias por participar</h2>
+
     </header>
     <div id="tips-box">
         <a href="#">Ver consejos</a>
@@ -38,4 +37,5 @@
 
     <script src="../JS/script.js"></script>
 </body>
+
 </html>

@@ -2,68 +2,64 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="../CSS/style_quest.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuestionario</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/style_quest.css">
 </head>
 
 <body id="Q-Body">
-    <nav>
-        <div class="hamburger" onclick="hamburger()">
-            <div class="top"></div>
-            <div class="mid"></div>
-            <div class="bot"></div>
-        </div>
-        <ul id="contenido-hamburgesa">
-            <li>Inicio</li>
-            <li>Formulario</li>
-        </ul>
-    </nav>
-    <!-- <div id="QStart"> -->
-    <!-- <img src="../IMG/responsable-mundo.png" alt="manos-mundo">
-            <h2>¡Bienvenido al Cuestionario de Consumo Responsable y Equidad de Género!</h2><br>
-            <p>En esta experiencia interactiva, te invitamos a reflexionar sobre tus hábitos alimenticios y tu percepción de la igualdad de género. Creemos en el poder de las decisiones individuales para impulsar un cambio positivo, y tu participación en este cuestionario es un paso valioso hacia un mundo más sostenible y equitativo.</p> -->
-    <!-- </div> -->
-    <!-- ¿Tu empresa apoya activamente a empresas lideradas por mujeres? 
-        Sí, nuestra empresa tiene políticas y programas específicos para apoyar a empresas lideradas por mujeres, promoviendo la igualdad de género.
-        No, nuestra empresa no tiene políticas o programas específicos para apoyar a empresas lideradas por mujeres en este momento.
-        No estoy seguro/a de la política de la empresa en este tema.-->
-
-    <div id="grande">
-        <div id="pregunta1_DIV" class="pregunta_DIV">
-            <div class="pregunta_texto">
-                <p><b id="pregunta_HTML"><!-- Aquí va el texto de la pregunta --></b></p>
+    <header id="Q-Header">
+        <nav>
+            <div class="hamburguer" id="MenuHamburgesa">
+                <div class="top"></div>
+                <div class="mid"></div>
+                <div class="bot"></div>
             </div>
-            <form action="" class="pregunta_form"> <!-- input -> value = "valor que devuelve al servidor" -->
-                <label for="respuesta_opcion1" class="form_label">
-                    <input type="radio" id="respuesta_opcion1" name="respuesta" value=" " class="respuesta_radio">
-                    <span id="respuesta1"><!-- contenido respuesta 1 --></span>
-                </label>
-                <label for="respuesta_opcion2" class="form_label">
-                    <input type="radio" id="respuesta_opcion2" name="respuesta" value=" " class="respuesta_radio">
-                    <span id="respuesta2"><!-- contenido respuesta 2 --></span>
-                </label>
-                <label for="respuesta_opcion3" class="form_label">
-                    <input type="radio" id="respuesta_opcion3" name="respuesta" value=" " class="respuesta_radio">
-                    <span id="respuesta3"><!-- contenido respuesta 3 --></span>
-                </label>
-                <label for="respuesta_opcion4" class="form_label" id="opcional">
-                    <!-- A veces no hay, y hay que ponerla en opcional {display -->
-                    <input type="radio" id="respuesta_opcion4" name="respuesta" value=" " class="respuesta_radio">
-                    <span id="respuesta4"><!-- contenido respuesta 4 --></span>
-                </label>
-            </form>
+            <div id="contenido-hamburguesa">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="quest.html">Formulario</a></li>
+                    <li><a href="results.html">Resultados/Consejos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="grande">
+            <div id="pregunta1_DIV" class="pregunta_DIV">
+                <div class="pregunta_texto">
+                    <p><b id="pregunta_HTML"><!-- Aquí va el texto de la pregunta --></b></p>
+                </div>
+                <form action="" class="pregunta_form"> <!-- input -> value = "valor que devuelve al servidor" -->
+                    <label for="respuesta_opcion1" class="form_label">
+                        <input type="radio" id="respuesta_opcion1" name="respuesta" value=" " class="respuesta_radio">
+                        <span id="respuesta1"><!-- contenido respuesta 1 --></span>
+                    </label>
+                    <label for="respuesta_opcion2" class="form_label">
+                        <input type="radio" id="respuesta_opcion2" name="respuesta" value=" " class="respuesta_radio">
+                        <span id="respuesta2"><!-- contenido respuesta 2 --></span>
+                    </label>
+                    <label for="respuesta_opcion3" class="form_label">
+                        <input type="radio" id="respuesta_opcion3" name="respuesta" value=" " class="respuesta_radio">
+                        <span id="respuesta3"><!-- contenido respuesta 3 --></span>
+                    </label>
+                    <label for="respuesta_opcion4" class="form_label" id="opcional">
+                        <!-- A veces no hay, y hay que ponerla en opcional {display -->
+                        <input type="radio" id="respuesta_opcion4" name="respuesta" value=" " class="respuesta_radio">
+                        <span id="respuesta4"><!-- contenido respuesta 4 --></span>
+                    </label>
+                </form>
+            </div>
         </div>
-    </div>
 
+        <div id="barraDeControl">
+            <!-- Aqui iran Atras ... Pregunta 1, 2, 3, ... Siguiente -->
+            <a href="#" class="Next_Back_Buttons" id="backButton">Anterior</a>
+            <a href="#" class="Next_Back_Buttons" id="nextButton">Siguiente</a>
+        </div>
+    </header>
 
-    <div id="barraDeControl">
-        <!-- Aqui iran Atras ... Pregunta 1, 2, 3, ... Siguiente -->
-        <a href="#" class="Next_Back_Buttons" id="backButton">Anterior</a>
-        <a href="#" class="Next_Back_Buttons" id="nextButton">Siguiente</a>
-    </div>
-    
     <script src="../JS/script.js"></script>
 </body>
+
 </html>
