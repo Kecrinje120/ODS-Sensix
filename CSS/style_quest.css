@@ -22,20 +22,34 @@
 }
 
 /* --------------------------------------------- MENU HAMBURGESA --------------------------------------------- */
-nav{
-    position: absolute;
-}
+
 .hamburguer {
-    margin: 10px;
     display: inline-block;
     cursor: pointer;
 }
 
-.hamburguer.activado ul {
+#contenido-hamburguesa {
+    display: none;
+}
+
+#contenido-hamburguesa.activado {
+    display: block;
     max-height: 100px;
 }
 
-.top, .mid, .bot {
+#contenido-hamburguesa ul li {
+    text-decoration: none;
+    display: block;
+}
+
+#contenido-hamburguesa ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.top,
+.mid,
+.bot {
     width: 35px;
     height: 5px;
     background-color: #000;
@@ -63,41 +77,6 @@ nav{
     font-size: 20px;
 }
 
-#visible {
-    display: block;
-}
-
-#contenido-hamburguesa {
-    overflow: hidden;
-    margin: 20px 0;
-    padding: 0;
-    max-height: 1000px; /* Cambiado a una altura suficientemente grande */
-    transition: max-height 0.5s ease;
-    list-style: none;
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 60px;
-}
-
-#contenido-hamburguesa ul {
-    margin: 20px 0;
-    padding: 0;
-    list-style: none;
-    display: none;
-    transition: opacity 0.5s ease;
-}
-
-#contenido-hamburguesa.visible ul {
-    display: contents;
-}
-
-#contenido-hamburguesa li a {
-    color: #000;
-    text-decoration: none;
-}
-
 /* --------------------------------------------- Titulos y texto --------------------------------------------- */
 
 #tituloh1 {
@@ -119,10 +98,12 @@ p {
     color: #000;
     font-size: 16px;
 }
+
 #texto {
     flex: 1;
     margin-right: 20px;
 }
+
 /* --------------------------------------------- Botonoes --------------------------------------------- */
 #boton-default {
     display: block;
@@ -167,7 +148,6 @@ p {
 }
 
 .imagenformulario {
-    left: 0px;
     width: 45%;
     border-radius: 20px;
     margin-right: 20px;
@@ -189,6 +169,7 @@ p {
     .imagenformulario {
         width: 100%;
         margin-top: 20px;
+        margin-right: 0px;
     }
 }
 
@@ -203,13 +184,13 @@ p {
 /* --------------------------------------------- FORMATO PREGUNTA --------------------------------------------- */
 
 #grande {
+    margin: 0px;
     width: 100%;
-    height: 2400px;
+    height: 100%;
     display: flex;
 }
 
 .pregunta_DIV {
-    border: 2px solid black;
     height: 600px;
     width: 100vw;
     display: flex;
@@ -219,14 +200,11 @@ p {
 
     border: 3px solid red;
     border-radius: 14px;
-    margin: 2vw 2vw 10vw 2vw;
-
     background-color: rgb(255, 255, 255, 0.3);
 }
 
 .pregunta_texto {
     margin-bottom: 20px;
-    /* Ajusta el espacio entre el texto y el formulario */
     text-align: center;
     margin: 0 4vw 20px 4vw;
 }
@@ -238,13 +216,27 @@ p {
 }
 
 .form_label {
+    padding: 15px;
     margin: 10px 4vw 10px 4vw;
 }
-
+.form_label:hover{
+    background-color: white;
+    border-radius: 20px;
+}
 .respuesta_radio {
     color: black;
 }
 
+@media only screen and (max-width: 600px) {
+    .form_label {
+        margin: 0px 0px 0px 0px;
+        font-size: 12px;
+    }
+
+    .pregunta_DIV {
+        height: 700px;
+    }
+}
 
 /* -----------------------------------------EFECTO FADE---------------------------------------------------------- */
 
@@ -274,10 +266,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 520px;
+    position: center;
     text-align: center;
-    width: 100%;
     padding: 4px 1vw;
     /* border: 2px solid black;
     border-radius: 12px;
@@ -290,7 +280,10 @@ p {
     }
 
     .pregunta_DIV {
-        height: 700px;
+        height: 920px;
+    }
+    p {
+        font-size: 14px;
     }
 }
 
@@ -331,4 +324,105 @@ p {
 
 #point_next {
     display: inline-block;
+}
+/* -----------------------------------------------RESULTADOS---------------------------------------------------- */
+
+#resultadosDIV {
+    margin: 20px;
+    padding: 15px;
+    margin-bottom: 50px;
+    background-color: #ffffff93;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.resultText {
+    font-size: 18px;
+}
+
+.resultText:nth-child(2) {
+    color: #e50000;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------RECOMENDACIONES ------------------------------------------------ */
+
+#tips-box {
+    margin: 20px;
+    padding: 15px;
+    margin-bottom: 50px;
+
+    background-color: #ffffff93;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tips-box h2 {
+    color: black; /* #e50000 */
+}
+
+.faq-recomendations {
+    width: 95%;
+    margin: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff93;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h5 {
+    color: black;
+    margin: 10px 20px 10px 10px;    
+}
+
+.answer p {
+    color: #e50000;
+}
+
+.answer {
+    max-height: 0; /* ESCONDEMOS EL CONTENIDO */
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.answer div {
+    margin-top: 20px;
+}
+
+.answer p {
+    margin: 10px 20px 10px 10px;    
+}
+
+.faq-recomendations.active .answer {
+    max-height: 400px;
+    animation: fade 1s ease-in-out;
+}
+
+.faq-recomendations span {
+    transition: transform .5s ease;
+}
+
+.faq-recomendations.active span {
+    transform: rotate(180deg);
+}
+
+@keyframes fade  {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

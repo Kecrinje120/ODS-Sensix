@@ -10,19 +10,22 @@
 
 <body id="Q-Body">
     <header id="Q-Header">
+        <!-- Remplazar todoss los menus hamburgesas por esto -->
         <nav>
-            <div class="hamburguer" id="hamburguer">
+            <div class="hamburguer" id="MenuHamburgesa">
                 <div class="top"></div>
                 <div class="mid"></div>
                 <div class="bot"></div>
             </div>
-            <ul id="contenido-hamburguesa">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="HTML/quest.html">Formulario</a></li>
-                <li><a href="HTML/results.html">Resultados/Consejos</a></li>
-            </ul>
+            <div id="contenido-hamburguesa">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="HTML/quest.html">Formulario</a></li>
+                <!--<li><a href="HTML/results.html">Resultados/Consejos</a></li>-->                
+                </ul>
+            </div>
         </nav>
-        
+
         <h1 id="tituloh1">ODS - Objetivos de Desarrollo Sostenible</h1>
         <button id="boton-default"><a id="comencemos_link" href="HTML/quest.html">Comencemos</a></button>
     </header>
@@ -52,7 +55,7 @@
     </div>
     <div class="formulario">
         <img src="IMG/formularioimg.jpg" alt="formularioimg" class="imagenformulario">
-        <div class="texto">
+        <div id="texto">
             <h2 id="tituloh2">Formulario para mejorar tu empresa</h2>
             <p>Este formulario te ayudará a identificar áreas de mejora en tu empresa para promover la igualdad de
                 género y
@@ -64,4 +67,5 @@
 
     <script src="JS/script.js"></script>
 </body>
+
 </html>
