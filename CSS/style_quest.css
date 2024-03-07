@@ -220,10 +220,12 @@ p {
     margin: 10px 4vw 10px 4vw;
     cursor: pointer;
 }
-.form_label:hover{
+
+.form_label:hover {
     background-color: white;
     border-radius: 20px;
 }
+
 .respuesta_radio {
     color: black;
 }
@@ -283,6 +285,7 @@ p {
     .pregunta_DIV {
         height: 920px;
     }
+
     p {
         font-size: 14px;
     }
@@ -326,6 +329,7 @@ p {
 #point_next {
     display: inline-block;
 }
+
 /* -----------------------------------------------RESULTADOS---------------------------------------------------- */
 
 #resultadosDIV {
@@ -362,7 +366,8 @@ p {
 }
 
 #tips-box h2 {
-    color: black; /* #e50000 */
+    color: black;
+    /* #e50000 */
 }
 
 .faq-recomendations {
@@ -383,7 +388,7 @@ p {
 
 h5 {
     color: black;
-    margin: 10px 20px 10px 10px;    
+    margin: 10px 20px 10px 10px;
 }
 
 .answer p {
@@ -391,7 +396,8 @@ h5 {
 }
 
 .answer {
-    max-height: 0; /* ESCONDEMOS EL CONTENIDO */
+    max-height: 0;
+    /* ESCONDEMOS EL CONTENIDO */
     overflow: hidden;
     transition: max-height 1.4s ease;
 }
@@ -401,7 +407,7 @@ h5 {
 }
 
 .answer p {
-    margin: 10px 20px 10px 10px;    
+    margin: 10px 20px 10px 10px;
 }
 
 .faq-recomendations.active .answer {
@@ -417,11 +423,12 @@ h5 {
     transform: rotate(180deg);
 }
 
-@keyframes fade  {
+@keyframes fade {
     from {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0px);
