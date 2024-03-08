@@ -17,7 +17,7 @@
     margin: 20px;
     padding: 15px;
     margin-bottom: 50px;
-    background-color: rgba(255, 255, 255, 0.276);
+    background-color: rgba(255, 255, 255, 0.678);
     border-radius: 20px;
 }
 
@@ -29,7 +29,9 @@
 }
 
 #contenido-hamburguesa {
+    margin: 10px;
     display: none;
+    position: absolute;
 }
 
 #contenido-hamburguesa.activado {
@@ -76,7 +78,25 @@
 .transicion ul li {
     font-size: 20px;
 }
+@media screen and (max-width: 768px) {
+    nav{
+        margin-top: 7px;
+        margin-bottom: 10px;
+    }
+    .hamburguer {
+        display: inline-block;
+        cursor: pointer;
+    }
 
+    #contenido-hamburguesa {
+        top: 20px;
+        left: 65px;
+        margin: 10px;
+        display: none;
+        position: absolute;
+    }
+
+}
 /* --------------------------------------------- Titulos y texto --------------------------------------------- */
 
 #tituloh1 {
@@ -191,22 +211,19 @@ p {
 }
 
 .pregunta_DIV {
-    height: 600px;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     border: 3px solid red;
     border-radius: 14px;
-    background-color: rgb(255, 255, 255, 0.1);
 }
 
 .pregunta_texto {
-    margin-bottom: 20px;
     text-align: center;
-    margin: 0 4vw 20px 4vw;
+    margin: 10px 4vw 20px 4vw;
 }
 
 .pregunta_form {
@@ -235,9 +252,8 @@ p {
         margin: 0px 0px 0px 0px;
         font-size: 12px;
     }
-
-    .pregunta_DIV {
-        height: 700px;
+    .pregunta_DIV{
+        height: fit-content;
     }
 }
 
@@ -280,11 +296,7 @@ p {
 @media only screen and (max-width: 600px) {
     #barraDeControl {
         top: 620px;
-    }
-
-    .pregunta_DIV {
-        height: 920px;
-    }
+    }  
 
     p {
         font-size: 14px;
